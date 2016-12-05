@@ -1,3 +1,21 @@
-<h1>Welcome to Fondify</h1>
+<% if @displayed_projects.any? %>
 
-<p>Team Work makes the dream works.</p>
+  <%= render 'projects/carousel' %>
+
+  <div class="container">
+    <br><br><br>
+    <h3 class="project-subtitle">Rubik project</h3>
+    <div class="row">
+      <%= render @projects %>
+    </div>
+  </div>
+
+<% else %>
+
+  <div class="container text-center">
+    <br><br><br>
+    <h2>Create your first project</h2>
+    <%= link_to "Star project!", "#", class: "btn btn-success btn-lg" %>
+  </div>
+
+<% end %>
