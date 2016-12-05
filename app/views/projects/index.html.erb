@@ -1,6 +1,6 @@
 <% if @displayed_projects.any? %>
 
-  <%= render 'projects/carousel' %>
+  <%= render 'projects/carousel', projects: @displayed_projects %>
 
   <div class="container">
     <br><br><br>
