@@ -15,6 +15,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'font-awesome-rails', '~> 4.7'
 gem 'devise', '~> 4.2'
 gem 'annotate', github: 'ctran/annotate_models'
+gem 'simple_form', '~> 3.3', '>= 3.3.1'
+gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
 
 group :development, :test do
   gem 'byebug'
