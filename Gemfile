@@ -21,6 +21,9 @@ gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
 # Date Validator
 gem 'date_validator', '~> 0.9.0'
 
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+gem 'momentjs-rails', '~> 2.15', '>= 2.15.1'
+
 group :development, :test do
   gem 'byebug'
 end
