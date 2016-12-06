@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
 
   #prevent user from accesing projects when they're noy logged in
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
     @projects = Project.all
@@ -33,6 +34,31 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+  end
+
+  def create
+    @project = current_user.projects.build(projects_params)
+
+    respond_to do |format|
+      if @project.save
+        format.html { redirect_to @project, notice: "Project was successfully created" }
+        format.json { render :show, status: :ok, location: @project}
+      else
+        format.html { redirect_to :edit}
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
+  private
+
+  def set_project
+    @project = Project.find(params[:id])
+  end
+
+  def projects_params
+    params.require(:project).permit(:name, :short_description, :description, :goal, :image_url, :expiration_date)
   end
 
 end
