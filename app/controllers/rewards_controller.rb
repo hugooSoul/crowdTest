@@ -2,12 +2,16 @@ class RewardsController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_project
+  before_action :set_reward, except: [:new, :create]
 
   def new
     @reward = @project.rewards.build
     respond_to do |format|
       format.html
     end
+  end
+
+  def edit
   end
 
   def create
@@ -21,10 +25,31 @@ class RewardsController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      if @reward.update(reward_params)
+        format.html { redirect_to @project, notice: "Reward was successfully updated" }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
+  def destroy
+    @reward.destroy
+    respond_to do |format|
+      format.html { redirect_to projects_path(@project), notice: "Reward was successfully destroyed" }
+    end
+  end
+
   private
 
   def set_project
     @project = Project.find(params[:project_id])
+  end
+
+  def set_reward
+    @reward = @project.rewards.find(params[:id])
   end
 
   def reward_params
