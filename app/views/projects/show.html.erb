@@ -43,7 +43,8 @@
     </div>
 
     <div class="col-md-4">
-      <p>Rewards will be render in here...</p>
+      <!-- <p>Rewards will be render in here...</p> -->
+      <%= render @rewards %>
       <%= link_to 'Add Reward', new_project_reward_path(@project), class: "btn btn-primary" %>
     </div>
   </div>
