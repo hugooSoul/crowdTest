@@ -16,7 +16,10 @@ gem 'font-awesome-rails', '~> 4.7'
 gem 'devise', '~> 4.2'
 gem 'annotate', github: 'ctran/annotate_models'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
+# Wysiwyg
 gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
+# Date Validator
+gem 'date_validator', '~> 0.9.0'
 
 group :development, :test do
   gem 'byebug'
