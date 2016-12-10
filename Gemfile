@@ -23,6 +23,7 @@ gem 'date_validator', '~> 0.9.0'
 
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 gem 'momentjs-rails', '~> 2.15', '>= 2.15.1'
+gem 'braintree'
 
 group :development, :test do
   gem 'byebug'
